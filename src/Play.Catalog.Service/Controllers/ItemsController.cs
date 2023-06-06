@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Service.Dtos;
 
@@ -19,7 +20,20 @@ namespace Play.Catalog.Service.Controllers
 
         };
 
-        public IEnumerable<ItemDto>
+        [HttpGet]
+
+        public IEnumerable<ItemDto> Get()
+        {
+            return items;
+        }
+
+        [HttpGet("{id}")]
+        public ItemDto GetById(Guid id)
+        {
+            var item = items.Where(item => item.Id == id).SingleOrDefault();
+            return item;
+
+        }
 
     }
 }
