@@ -1,4 +1,7 @@
+using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Play.Catalog.Service.Dtos;
 
 namespace Play.Catalog.Service.Controllers
 {
@@ -8,6 +11,15 @@ namespace Play.Catalog.Service.Controllers
 
     public class ItemsController : ControllerBase
     {
+        private static readonly List<ItemDto> items = new()
+        {
+            new ItemDto(Guid.NewGuid(), "Potion", "Restores a small amount of HP", 5, DateTimeOffset.UtcNow),
+            new ItemDto(Guid.NewGuid(), "Antodote", "Cures poison", 7, DateTimeOffset.UtcNow),
+            new ItemDto(Guid.NewGuid(), "Bronze sword", "Deals a small amount of damage", 20, DateTimeOffset.UtcNow),
+
+        };
+
+        public IEnumerable<ItemDto>
 
     }
 }
