@@ -7,7 +7,7 @@ using Play.Catalog.Service.Dtos;
 namespace Play.Catalog.Service.Controllers
 {
 
-    [ApiController] 
+    [ApiController]
     [Route("items")]
 
     public class ItemsController : ControllerBase
